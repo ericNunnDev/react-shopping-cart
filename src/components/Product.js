@@ -1,7 +1,9 @@
 import React from 'react';
+import { ProductContext } from '../contexts/ProductContext';
 
 const Product = props => {
 	return (
+		<ProductContext.Provider value={props.product}>
 		<div className="product">
 			<img src={props.product.image} alt={`${props.product.title} book`} />
 
@@ -13,6 +15,7 @@ const Product = props => {
 				Add to cart
 			</button>
 		</div>
+		</ProductContext.Provider>
 	);
 };
 
